@@ -21,14 +21,14 @@ function ContactForm() {
                 setErrorMessage('');
             }
         }
-        if (!errorMessage) {
-        setFormState({...formState, [e.target.name]: e.target.value });
-        };
+        
     };
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(formState);
+        if (!errorMessage) {
+            setFormState({...formState, [e.target.name]: e.target.value });
+        };
     };
 
     return(
