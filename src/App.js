@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import './App.css';
+import './index.css';
+import './project/index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import About from './components/About';
 import Nav from './components/Nav';
 import Gallery from './components/Gallery';
@@ -25,7 +29,10 @@ function App() {
         currentCategory={currentCategory}
       ></Nav>      
       <main>
-        <ContactForm></ContactForm>
+        <ContactForm></ContactForm>{categories.map(
+          category => <Gallery currentCategory={category}></Gallery>
+
+        )}
         <Gallery currentCategory={currentCategory}></Gallery>
         <About></About>
       </main>
