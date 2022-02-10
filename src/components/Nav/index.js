@@ -10,6 +10,7 @@ function Nav(props) {
       categories = [],
       setCurrentCategory,
       currentCategory,
+      contactSelected,
       setContactSelected
     } = props;
   
@@ -41,7 +42,7 @@ function Nav(props) {
                         <span onClick={() => setContactSelected(true)}>Contact</span>
                     </li>
                     {categories.map((category) => (
-                        <li className={`mx-1 ${currentCategory.name === category.name && 'navActive'}`} key={category.name}>
+                        <li className={`mx-1 ${currentCategory.name === category.name && !contactSelected && 'navActive'}`} key={category.name}>
                             <span
                                 onClick={() => {
                                     setCurrentCategory(category);
